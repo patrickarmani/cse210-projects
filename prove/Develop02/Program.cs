@@ -5,68 +5,68 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System;
+
 class Program
 {
     static void Main(string[] args)
-    {
-       
-     
-        Console.WriteLine(); //line spacene space 
-        Console.WriteLine("WELCOME TO DIGITAL JOURNAL PROGRAM"); // The Journal initializy with title
-       // Entry entry = new Entry();
-       // entry.MyMenu();
+    {   
+        Journal journal1 = new Journal();
+        bool quit = false;
 
-        //public void MyMenu()
-    //{
-        Console.WriteLine();// line space
-        
-        Console.WriteLine("Please, choose an option: "); // The user write entry dates
+        while (!quit)
+        {   
+            Console.WriteLine();
+            Console.WriteLine("WELCOME TO JOURNAL PROGRAM!");
+            Console.WriteLine();
+            Console.WriteLine("Choose an option bellow:");
+            Console.WriteLine();
+            Console.WriteLine("1. Write \n2. Display\n3. Load \n4. Save \n5. Quit");
+            int UserChoose = int.Parse(Console.ReadLine());
 
-        List<string> menuOptions = new List<string> ()
-        {
-            "1 - Write",
-            "2 - Display",
-            "3 - Load",
-            "4 - Save",
-            "5 - Quit",
-        };
-
-        string userMenuOption = "";
-
-
-        while  (userMenuOption != "5")
-        {
-            foreach(string menu in menuOptions) //faz com que os items da lista apareçam linha por linha
+            if (UserChoose == 1) 
             {
-            //this code pass a list in a loop for showing every option in a different line
-            Console.WriteLine(menu);
-            }
-            userMenuOption = Console.ReadLine();
-            
-            if (userMenuOption == "1") // o conteúdo do parenteses é uma condição
-            {   Entry entryQuestion = new Entry();
-                Entry entryAnswer = new Entry();
-                //RandomQuestions(); // isso chama o método
-                entryQuestion._question = entryQuestion.RandomQuestions();
-                Console.Write(entryQuestion._question);
-                entryAnswer._userAnswer = Console.ReadLine();
-                Journal journal1 = new Journal(); // serve para chamar a lista de respostas da classe Journal
-                journal1._answers.Add(entryQuestion); // serve para salvar a resposta da pergunta feita ao usuário
-                journal1._answers.Add(entryAnswer); // salva a resposta do usuário
                 
-            }
-            else if (userMenuOption == "2")
+                Questions random = new Questions(); // this code create a object called Questions and a prompt is formed.
+                string questions = random.AskQuestions();
+
+                
+                Console.WriteLine(questions); //Display a prompt questions formed and stores the answers
+                string answer = Console.ReadLine();
+
+                
+                DateTime date = DateTime.Today; //informs the date that registration is being made
+
+                
+                Entry entry = new Entry(date.ToString("d"), questions, answer);// code that show date
+                
+                
+                journal1.AddEntry(entry); //This code will create and save the journal
+            } 
+            else if (UserChoose == 2) 
             {
-                Journal journal2 = new Journal();
-                journal2.AnswersList();
-
+                journal1.DisplayJ();
+            } 
+            else if (UserChoose == 3)
+            {
+                Console.WriteLine("\nWhat is the file chosen?");
+                string chosenfile = Console.ReadLine();
+                journal1.LoadFile(chosenfile);
             }
-            //break;
+            else if (UserChoose == 4)
+            {
+                Console.WriteLine("\nWhat name will the file receive?");
+                string chosenfile = Console.ReadLine();
+                journal1.SaveFile(chosenfile);
+            } 
+            else if (UserChoose == 5)
+            {
+                quit = true;
+            }
+            else
+            {
+                Console.WriteLine("There is no such option, choose another please!");
+            }
         }
-
-
-    //}
-
     }
-
 }

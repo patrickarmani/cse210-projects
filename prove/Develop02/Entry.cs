@@ -5,34 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Entry
+class Entry
 {
-    public string _userAnswer;
+    public string _questions;
+    public string _date;
+    public string _answer;
 
-    public string _question;
-    public List<string> questions = new List<string> ()
+
+    public Entry(string date, string questions, string answer)
     {
-        "Who was the most interesting person I interacted with today? ",
-        "What was the best part of my day? ",
-        "How did I see the hand of the Lord in my life today? ",
-        "What was the strongest emotion I felt today? ",
-        "If I had one thing I could do over today, what would it be? ",
-    };
-    
-
-    public string RandomQuestions() // precisa ser feito fora do método anterior
-
-    {
-        Random random = new Random();
-        int _question = random.Next(questions.Count);
-        return questions[_question]; 
+        this._questions = questions;
+        this._date = date;
+        this._answer = answer;
     }
 
     public void Display()
     {
-        Console.WriteLine($"Prompt: {_question}");
-        Console.WriteLine($"Your answer: {_userAnswer}");
-        
+        Console.WriteLine($"\n{_date} - Prompt Questions: {_questions}");
+        Console.WriteLine($"{_answer}");
     }
 
+    public string CompleteText()
+    {
+        string text = $"{_date},{_questions},{_answer}";
+        return text;
+    }
 }
