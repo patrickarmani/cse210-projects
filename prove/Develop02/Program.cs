@@ -5,67 +5,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System;
-
 class Program
 {
     static void Main(string[] args)
-    {   
-        Journal journal1 = new Journal();
-        bool quit = false;
+    {
+        // Console.WriteLine("Hello Develop02 World!");
+        Journal journal = new Journal();
+        Console.WriteLine("********** Welcome to the Journal Program! **********");
+        Console.WriteLine();
 
-        while (!quit)
-        {   
-            Console.WriteLine();
-            Console.WriteLine("WELCOME TO JOURNAL PROGRAM!");
-            Console.WriteLine();
-            Console.WriteLine("Choose an option bellow:");
+        bool play = true;
+        while (play)
+        {
+            Console.WriteLine("These are your options. Please choose one of them. ");
             Console.WriteLine();
             Console.WriteLine("1. Write \n2. Display\n3. Load \n4. Save \n5. Quit");
-            int UserChoose = int.Parse(Console.ReadLine());
+            int userOption = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
-            if (UserChoose == 1) 
+            switch (userOption)
             {
-                
-                Questions random = new Questions(); // this code create a object called Questions and a prompt is formed.
-                string questions = random.AskQuestions();
-
-                
-                Console.WriteLine(questions); //Display a prompt questions formed and stores the answers
-                string answer = Console.ReadLine();
-
-                
-                DateTime date = DateTime.Today; //informs the date that registration is being made
-
-                
-                Entry entry = new Entry(date.ToString("d"), questions, answer);// code that show date
-                
-                
-                journal1.AddEntry(entry); //This code will create and save the journal
-            } 
-            else if (UserChoose == 2) 
-            {
-                journal1.DisplayJ();
-            } 
-            else if (UserChoose == 3)
-            {
-                Console.WriteLine("\nWhat is the file chosen?");
-                string chosenfile = Console.ReadLine();
-                journal1.LoadFile(chosenfile);
-            }
-            else if (UserChoose == 4)
-            {
-                Console.WriteLine("\nWhat name will the file receive?");
-                string chosenfile = Console.ReadLine();
-                journal1.SaveFile(chosenfile);
-            } 
-            else if (UserChoose == 5)
-            {
-                quit = true;
-            }
-            else
-            {
-                Console.WriteLine("There is no such option, choose another please!");
+                //Write
+                case 1:
+                    journal.NewEntry();
+                    Console.WriteLine();
+                    break;
+                //Display
+                case 2:
+                    journal.DisplayEntries();
+                    Console.WriteLine();
+                    break;
+                //Load
+                case 3:
+                    Console.Write("Which file do you want to load? ");
+                    string fileToLoad = Console.ReadLine();
+                    journal.LoadEntries(fileToLoad);
+                    Console.WriteLine();
+                    break;
+                //Save
+                case 4:
+                    Console.Write("Type the name of the file to be saved: ");
+                    string saveFileName = Console.ReadLine();
+                    journal.SaveEntries(saveFileName);
+                    Console.WriteLine("It worked! It's saved.");
+                    Console.WriteLine();
+                    break;
+                //Quit
+                case 5:
+                    play = false;
+                    Console.WriteLine("See you soon! Have a nice day! ");
+                    Console.WriteLine();
+                    break;
+                default:
+                    Console.WriteLine("His choice was not found. Choose a number from 1 to 5 please.");
+                    break;
             }
         }
     }
