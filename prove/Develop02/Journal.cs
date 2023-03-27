@@ -5,68 +5,80 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class Journal
+public class Journal
 {
-    public List<Entry> _entryList = new List<Entry> {};
 
-    public Journal()
+    public List<Entry> _entries = new List<Entry>();
+    public void NewEntry()
     {
-
+        Entry userEntry = new Entry();
+        userEntry.ShowDate();
+        userEntry.RandomQuestions();
+        userEntry.DisplayUserAnswer();
+        _entries.Add(userEntry);
     }
 
-    public void DisplayJ()
+    public void DisplayEntries()
     {
-        foreach (Entry entry in _entryList)
+        foreach (Entry entry in _entries)
         {
-            entry.Display();
+            Console.WriteLine();
+            Console.WriteLine($"Date: {entry._date}");
+            Console.WriteLine();
+            Console.WriteLine($"Prompt: {entry._question}");
+            Console.WriteLine($"{entry._userAnswer}");
+            Console.WriteLine();
         }
     }
 
-    public void AddEntry(Entry entry)
-    {   
-        _entryList.Add(entry);
-    }
-
-    public void LoadFile(string chosenfile)
+    public void LoadEntries(string filename)
     {
-        try 
+        if (filename.EndsWith(".doc"))
         {
-            string[] lines = System.IO.File.ReadAllLines(chosenfile);
-            
+            string[] lines = System.IO.File.ReadAllLines(filename);
             foreach (string line in lines)
             {
-                string[] parts = line.Split(" ~ ");
-                
+                string[] parts = line.Split(",");
                 string date = parts[0];
-                string questions = parts[1];
-                string answer = parts[3];
-
-
-                Entry entry = new Entry(date, questions, answer);
-
-                _entryList.Add(entry);
+                string question = parts[1];
+                string answer = parts[2];
+                Console.WriteLine($"Date: {date}");
+                Console.WriteLine($"Prompt: {question}");
+                Console.WriteLine($"{answer}");
+                Console.WriteLine();
             }
-        } 
-        catch (FileNotFoundException e)
-        {
-            Console.WriteLine($"File not found! ERROR: {e.Message}");
         }
-        catch (System.IndexOutOfRangeException e)
+        else
         {
-            Console.WriteLine($"File could not be read, one or multiple rows present issues. ERROR: {e.Message}");
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                String journalEntries = reader.ReadToEnd();
+                Console.Write(journalEntries);
+            }
         }
-
     }
 
-    public void SaveFile(string chosenfile)
+    public void SaveEntries(string filename)
     {
-        using (StreamWriter outputFile = new StreamWriter(chosenfile))
+        using (StreamWriter outputFile = new StreamWriter(filename, true))
         {
-            foreach (Entry entry in _entryList) {
-                string entryLine = entry.CompleteText();
-                outputFile.WriteLine(entryLine);
+            if (filename.EndsWith(".doc"))
+            {
+                foreach (Entry entry in _entries)
+                {
+                    outputFile.WriteLine($"{entry._date},{entry._question},{entry._userAnswer}");
+                }
             }
-            
+            else
+            {
+                foreach (Entry entry in _entries)
+                {
+                    outputFile.WriteLine($"Date:{entry._date},{entry._question},{entry._userAnswer}");
+                    outputFile.WriteLine($"Prompt:{entry._question}");
+                    outputFile.WriteLine($"{entry._userAnswer}");
+                    outputFile.WriteLine();
+                }
+            }
         }
     }
 }

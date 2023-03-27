@@ -5,29 +5,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class Entry
+public class Entry
 {
-    public string _questions;
+    public string _question;
+    public string _userAnswer;
     public string _date;
-    public string _answer;
+        
 
-
-    public Entry(string date, string questions, string answer)
+    public void ShowDate()
     {
-        this._questions = questions;
-        this._date = date;
-        this._answer = answer;
+        DateTime theCurrentTime = DateTime.Now;
+        _date = theCurrentTime.ToShortDateString();
     }
 
-    public void Display()
+    public void RandomQuestions()
     {
-        Console.WriteLine($"\n{_date} - Prompt Questions: {_questions}");
-        Console.WriteLine($"{_answer}");
+        List<string> questions = new List<string>()
+    {
+    "Who was the most interesting person I interacted with today?",
+    "What was the best part of my day?",
+    "How did I see the hand of the Lord in my life today?",
+    "What was the strongest emotion I felt today?",
+    "If I had one thing I could do over today, what would it be?",
+    "List the places I have been to today.",
+    "List the 3 things you are grateful for today and why.",
+    "What did you do today to bless someone's life?",
+    "What scripture have you studied today? What did you learn from her?",
+    "What steps did you take today towards a goal you’re working on?",
+    "How would you describe your spirituality today?",
+    "Would you change any of the decisions you made today?",
+    };
+
+        Random rand = new Random();
+        int randomIndex = rand.Next(questions.Count);
+        _question = questions[randomIndex];
+        Console.WriteLine(_question);
     }
 
-    public string CompleteText()
+    public void DisplayUserAnswer()
     {
-        string text = $"{_date},{_questions},{_answer}";
-        return text;
+        Console.Write("> ");
+        _userAnswer = Console.ReadLine();
     }
 }
