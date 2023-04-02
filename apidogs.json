@@ -1,0 +1,43 @@
+{
+    "dogs": [
+      {
+        "name": "Boxer",
+        "type": "european",
+        "country": "Germany",
+        "features": "faithful, vigilant",
+        "size": "medium size",
+        "image": "https://i.pinimg.com/564x/97/bd/a3/97bda39a6363cbb15158ccda938014f2.jpg",
+        "comments": "This German breed is of the medium-sized molossus type, and was used in the World Wars to send messages, collect bodies of wounded soldiers, or carry communication cables."
+      },
+      {
+        "name": "Spanish Mastiff",
+        "type": "european",
+        "country": "Spain",
+        "features": "devoted to her owners and an effective nanny",
+        "size": "large size, is muscular and powerful",
+        "image": "https://i.pinimg.com/564x/97/bd/a3/97bda39a6363cbb15158ccda938014f2.jpg",
+        "comments": "It is one of the European dog breeds very present in rural areas, and is used as a guardian of cattle."
+      },
+      {
+        "name": "Dogue Bordeaux",
+        "type": "european",
+        "country": "France",
+        "features": "Caring, attached to his family, faithful and quiet.",
+        "size": "large size",
+        "image": "https://i.pinimg.com/564x/97/bd/a3/97bda39a6363cbb15158ccda938014f2.jpg",
+        "comments": "These big guys may seem calm, but show them a turret or cannon and you'll see their fury unleashed! Slow yet durable, these warriors are best used to soak up hits."
+      },
+      {
+        "name": "Dogo Argentino",
+        "type": "american",
+        "country": "Argentina",
+        "features": "Protect your family group",
+        "size": "large size",
+        "image": "https://i.pinimg.com/564x/97/bd/a3/97bda39a6363cbb15158ccda938014f2.jpg",
+        "comments": "If they are properly educated, they will be quiet and bark little."
+      }
+      
+      
+    ]
+  }
+  
