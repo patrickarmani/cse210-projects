@@ -1,0 +1,104 @@
+[
+    {
+        "dogName": "Boxer",
+        "origin": "Germany",
+        "age": "10 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Boxer#/media/Ficheiro:1._Brindle_boxer_dog,_female.jpg"
+    },
+    {
+        "dogName": "German shepherd dog",
+        "origin": "Germany",
+        "age": "12 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Pastor-alem%C3%A3o#/media/Ficheiro:2._DSC_0346_(10096362833)2.jpg"
+    },
+    {
+        "dogName": "Dachshund",
+        "origin": "Germany",
+        "age": "16 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Dachshund#/media/Ficheiro:%EB%8B%A5%EC%8A%A4%ED%9B%88%ED%8A%B8(%EB%8B%A8%EB%AA%A8%EC%A2%85)_(Dachshund_(Short)).jpg"
+    },
+    {
+        "dogName": "weimaraner dog",
+        "origin": "Germany",
+        "age": "12 years old",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Weimaraner_wb.jpg"
+    },
+    {
+        "dogName": "Rottweiler",
+        "origin": "Germany",
+        "age": "8 years old",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/%2801%29_Rottweiler_5830118718_ce2570e348_o.jpg"
+    },
+    {
+        "dogName": "Doberman Pinscher",
+        "origin": "Germany",
+        "age": "16 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Dobermann#/media/Ficheiro:Dobermann_handling.jpg"
+    },
+    {
+        "dogName": "Buldogue Serrano",
+        "origin": "Brazil",
+        "age": "16 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Buldogue-serrano#/media/Ficheiro:Anuke.jpg"
+    },
+    {
+        "dogName": "Brasilian Dogue",
+        "origin": "Brazil",
+        "age": "8 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Dogue_brasileiro#/media/Ficheiro:Doguebrasileiro.jpg"
+    },
+    {
+        "dogName": "Ovelheiro Gaúcho",
+        "origin": "Brazil",
+        "age": "16 years old",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Ovelheiro.jpg/300px-Ovelheiro.jpg"        
+    },
+    {
+        "dogName": "Pastor-maremano-abruzês",
+        "origin": "Italy",
+        "age": "16 years old",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Cane_da_Pastore_Maremmano_Abruzzese.jpg/300px-Cane_da_Pastore_Maremmano_Abruzzese.jpg"
+    },
+    {
+        "dogName": "Cane Corso",
+        "origin": "Italy",
+        "age": "16 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Cane_corso#/media/Ficheiro:X-MAN_DE_LA_MIRAGE_DE_TORRELLAS_03.jpg"
+    },
+    {
+        "dogName": "Alaskan Malamute",
+        "origin": "USA",
+        "age": "16 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Malamute-do-alasca#/media/Ficheiro:Alaskan_Malamute_600.jpg"
+    },
+    {
+        "dogName": "Dogo Argentino",
+        "origin": "Argentina",
+        "age": "13 years old",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Dogo_argentino_sylwetka.jpg/300px-Dogo_argentino_sylwetka.jpg"
+    },
+    {
+        "dogName": "Chihuahua",
+        "origin": "Mexico",
+        "age": "13 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Chihuahua_(c%C3%A3o)#/media/Ficheiro:Babylone_3ans1.jpg"
+    },
+    {
+        "dogName": "Basset Hound",
+        "origin": "France",
+        "age": "13 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Basset_Hound#/media/Ficheiro:Bvdb-bassethound2.jpg"
+    },
+    {
+        "dogName": "Poodle",
+        "origin": "France",
+        "age": "13 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Poodle#/media/Ficheiro:Poodle,_cropped.JPG"
+    },
+    {
+        "dogName": "Frank DeLeon",
+        "origin": "Spain",
+        "age": "13 years old",
+        "imageUrl": "https://pt.wikipedia.org/wiki/Frank_DeLeon#/media/Ficheiro:MEU_CACHORRO.jpg"
+    }
+]
