@@ -1,0 +1,4 @@
+0
+Simple Goal:; Diet; Eat Low-Calorie Foods Every Tuesday And Wednesday.; 200; False
+Simple Goal:; Early; Waking Up 5:30 A.M. Every Monday, And Friday.; 200; False
+Simple Goal:; Pray; Say A Prayer Of Thanks Every Wednesday.; 100; False
